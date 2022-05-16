@@ -1,0 +1,189 @@
+.modal-container-edit {
+    pointer-events: none;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    width: 100vw;
+}
+
+.modal-container-edit.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal-edit {
+    background-color: #ffffff;
+    height: 740px;
+    width: 1000px;
+    overflow-y: scroll;
+    fill: #ffffff;
+    border: 1px inside;
+    border-color: #9b9b9b 100%;
+    box-shadow: 0px 0px 26px 6px;
+}
+
+.mod-header {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #1E1E1E 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 46px;
+    line-height: 1.2;
+}
+
+#mod-title-edit {
+    display: inline;
+    height: 35px;
+    width: 400px;
+    border: 1px initial;
+    border-color: #9b9b9b;
+    border-radius: 5px;
+    margin-left: 75px;
+    margin-right: 40px;
+    margin-bottom: 25px;
+    font-family: 'Cardo', serif;
+    color: #9b9b9b;
+    color: hsl(0, 100%, 0);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+input::placeholder {
+    padding-left: 10px;
+}
+
+#mod-something-edit {
+    height: 35px;
+    width: 400px;
+    border: 1px initial;
+    border-color: #9b9b9b;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    font-family: 'Cardo', serif;
+    color: #9b9b9b;
+    color: hsl(0, 100%, 0);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+#mod-author-edit {
+    display: inline;
+    height: 35px;
+    width: 400px;
+    border: 1px initial;
+    border-color: #9b9b9b;
+    border-radius: 5px;
+    margin-left: 75px;
+    margin-right: 40px;
+    margin-bottom: 25px;
+    font-family: 'Cardo', serif;
+    color: #9b9b9b;
+    color: hsl(0, 100%, 0);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+#mod-date-edit {
+    height: 35px;
+    width: 400px;
+    border: 1px initial;
+    border-color: #9b9b9b;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    font-family: 'Cardo', serif;
+    color: #9b9b9b;
+    color: hsl(0, 100%, 0);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+#mod-url-edit {
+    height: 35px;
+    width: 850px;
+    border: 1px initial;
+    border-color: #9b9b9b;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    margin-left: 75px;
+    font-family: 'Cardo', serif;
+    color: #9b9b9b;
+    color: hsl(0, 100%, 0);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+#mod-saying-edit {
+    height: 35px;
+        width: 850px;
+        border: 1px initial;
+        border-color: #9b9b9b;
+        border-radius: 5px;
+        margin-bottom: 25px;
+        margin-left: 75px;
+        font-family: 'Cardo', serif;
+        color: #9b9b9b;
+        color: hsl(0, 100%, 0);
+        font-size: 18px;
+        line-height: 1.4;
+}
+
+#mod-summary-edit {
+    height: 35px;
+        width: 850px;
+        border: 1px initial;
+        border-color: #9b9b9b;
+        border-radius: 5px;
+        margin-bottom: 25px;
+        margin-left: 75px;
+        font-family: 'Cardo', serif;
+        color: #9b9b9b;
+        color: hsl(0, 100%, 0);
+        font-size: 18px;
+        line-height: 1.4;
+}
+
+#mod-content-edit {
+    height: 250px;
+    width: 850px;
+    border: 1px initial;
+    border-color: #9b9b9b;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    margin-left: 75px;
+    font-family: 'Cardo', serif;
+    color: #9b9b9b;
+    color: hsl(0, 100%, 0);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.btn-cancel-edit {
+    margin-left: 75px;
+    height: 60px;
+    width: 300px;
+    border: 1px inside #1E1E1E 100%;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 50px;
+}
+
+.btn-save {
+    float: right;
+    margin-right: 75px;
+    height: 60px;
+    width: 300px;
+    border: 1px inside #1E1E1E 100%;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: 1.3;
+}

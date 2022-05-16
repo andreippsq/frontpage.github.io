@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="modal-style.css">
+    <link rel="stylesheet" href="modal-edit-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cardo&display=swap" rel="stylesheet">
@@ -30,28 +31,43 @@
             <button id="add_btn" class="add-btn">+ADD ARTICLE</button>
         </div>
         <div class="modal-container" id="modal_container">
-            <div class="modal">
+            <div class="modal" id="modal">
                 <h1 class="mod-header">Add/Edit article</h1>
-                <input type="text" name="title" id="mod-title" placeholder="Please enter title">
-                <input type="text" name="something" id="mod-something" placeholder="Please enter something">
-                <input type="text" name="author" id="mod-author" placeholder="Please enter author">
-                <input type="text" name="date" id="mod-date" placeholder="Please enter date">
-                <input type="text" name="url" id="mod-url" placeholder="Please enter image url">
-                <input type="text" name="content" id="mod-content" placeholder="Please enter content">
+                <input type="text" name="title" id="mod-title" placeholder="Please enter title" required>
+                <input type="text" name="something" id="mod-something" placeholder="Please enter tag" required>
+                <input type="text" name="author" id="mod-author" placeholder="Please enter author" required>
+                <input type="text" name="date" id="mod-date" placeholder="Please enter date" required>
+                <input type="text" name="url" id="mod-url" placeholder="Please enter image url" required>
+                <input type="text" name="content" id="mod-content" placeholder="Please enter content" required>
                 <button class="btn-cancel" id="btn_cancel">CANCEL</button>
+                <button class="btn-save" id="btn_save" onclick="save()">SAVE</button>
+            </div>
+        </div>
+        <!-- <div class="modal-container-edit" id="modal_container_edit">
+            <div class="modal-edit" id="modal_edit">
+                <h1 class="mod-header">Add/Edit article</h1>
+                <input type="text" name="title" id="mod-title-edit" placeholder="Please enter title" required>
+                <input type="text" name="something" id="mod-something-edit" placeholder="Please enter tag" required>
+                <input type="text" name="author" id="mod-author-edit" placeholder="Please enter author" required>
+                <input type="text" name="date" id="mod-date-edit" placeholder="Please enter date" required>
+                <input type="text" name="url" id="mod-url-edit" placeholder="Please enter image url" required>
+                <input type="text" name="saying" id="mod-saying-edit" placeholder="Please enter saying" required>
+                <input type="text" name="summary" id="mod-summary-edit" placeholder="Please enter summary" required>
+                <input type="text" name="content" id="mod-content-edit" placeholder="Please enter content" required>
+                <button class="btn-cancel" id="btn_cancel_edit">CANCEL</button>
                 <button class="btn-save">SAVE</button>
             </div>
         </div>
-        <article>
+        <article id="articleOne">
             <div class="article-top">
                 <h1 class="article-title">The complete guide to explore Transilvania, with your bike</h1>
                 <div class="subtitle">
                     <p>Destination Europe<span>•</span>Added by <name class="sub-name">Jonathan Mercadona</name><span>•</span>July 01,2018</p>
                 </div>
                 <div class="ed-de">
-                    <button class="edit-btn">Edit</button>
+                    <button class="edit-btn" id="edit-btn-one">Edit</button>
                     <span>|</span>
-                    <button class="delete-btn">Delete</button>
+                    <button class="delete-btn" onclick="myFunctionOne()">Delete</button>
                 </div>
             </div>
             <div class="article-img">
@@ -80,7 +96,7 @@
                     perferendis dolorum odio quam?</p>
             </div>
         </article>
-        <article>
+        <article id="articleTwo">
             <div class="article-top">
                 <h1 class="article-title">Bucegi: Places you must visit before you die</h1>
                 <div class="subtitle">
@@ -89,7 +105,7 @@
                 <div class="ed-de">
                     <button class="edit-btn">Edit</button>
                     <span>|</span>
-                    <button class="delete-btn">Delete</button>
+                    <button class="delete-btn" onclick="myFunctionTwo()">Delete</button>
                 </div>
             </div>
             <div class="article-img">
@@ -118,7 +134,7 @@
                     perferendis dolorum odio quam?</p>
             </div>
         </article>
-        <article>
+        <article id="articleThree">
             <div class="article-top">
                 <h1 class="article-title">Romania: The land of dreams</h1>
                 <div class="subtitle">
@@ -128,7 +144,7 @@
                 <div class="ed-de">
                     <button class="edit-btn">Edit</button>
                     <span>|</span>
-                    <button class="delete-btn">Delete</button>
+                    <button class="delete-btn" onclick="myFunctionThree()">Delete</button>
                 </div>
             </div>
             <div class="article-img">
@@ -157,7 +173,7 @@
                     perferendis dolorum odio quam?</p>
             </div>
         </article>
-        <article>
+        <article id="articleFour">
             <div class="article-top">
                 <h1 class="article-title">Sarmale - Stuffed cabbage rolls Good or bad?</h1>
                 <div class="subtitle">
@@ -167,7 +183,7 @@
                 <div class="ed-de">
                     <button class="edit-btn">Edit</button>
                     <span>|</span>
-                    <button class="delete-btn">Delete</button>
+                    <button class="delete-btn" onclick="myFunctionFour()">Delete</button>
                 </div>
             </div>
             <div class="article-img">
@@ -195,25 +211,347 @@
                     fugiat facere dicta mollitia? Quisquam laudantium est fugit aliquam qui? Quae voluptates rem
                     perferendis dolorum odio quam?</p>
             </div>
-        </article>
+        </article> -->
+        <div id="form"></div>
+        <div id="root"></div>
         <footer>
             <button class="prev-btn" type="button">previous</button>
             <button class="next-btn" type="button">next</button>
         </footer>
     </container>
-    <script>
-        const add_btn = document.getElementById('add_btn');
-        const modal_container = document.getElementById('modal_container');
-        const btn_cancel = document.getElementById('btn_cancel');
+    <script type="text/javascript">
+        // const add_btn = document.getElementById('add_btn');
+        // const modal_container = document.getElementById('modal_container');
+        // const btn_cancel = document.getElementById('btn_cancel');
 
-        add_btn.addEventListener('click', () => {
-            modal_container.classList.add('show');
-        })
+        // add_btn.addEventListener('click', () => {
+        //     modal_container.classList.add('show');
+        // })
 
-        btn_cancel.addEventListener('click', () => {
-            modal_container.classList.remove('show');
-        })
+        // btn_cancel.addEventListener('click', () => {
+        //     modal_container.classList.remove('show');
+        // })
+
+        // // save funtion
+        // const input1 = document.getElementById('mod-title');
+        // const btn_save = document.getElementById('btn_save');
+        // const out1 = document.getElementById('article-title');
+        // const showArt = document.getElementById('articleNew');
+
+        // function fun1() {
+        //     out1.innerHTML = input1.value;
+        // }
+
+        // btn_save.addEventListener('click', fun1);
+        // btn_save.addEventListener('click', () => {
+        //     modal_container.classList.remove('show');
+        // })
+
+        // // delete button
+        // function myFunctionOne() {
+        //     document.getElementById("articleOne")
+        //     .outerHTML = "";
+        // }
+
+        // function myFunctionTwo() {
+        //     document.getElementById("articleTwo")
+        //         .outerHTML = "";
+        // }
+
+        // function myFunctionThree() {
+        //     document.getElementById("articleThree")
+        //         .outerHTML = "";
+        // }
+
+        // function myFunctionFour() {
+        //     document.getElementById("articleFour")
+        //         .outerHTML = "";
+        // }
+
+        // //modal edit button
+
+        // const btn_cancel_edit = document.getElementById('btn_cancel_edit');
+
+        // btn_cancel_edit.addEventListener('click', () => {
+        //     modal_container_edit.classList.remove('show');
+        // })
+
+        // // edit button
+        //     const modal_container_edit = document.getElementById('modal_container_edit');
+        //     const edit_btn1 = document.getElementById('edit-btn-one');
+        //     edit_btn1.addEventListener('click', () => {
+        //         modal_container_edit.classList.add('show');
+        //     })
+
+
+
+        // tema
+        // const root = document.getElementById('root');
+        // const form = document.getElementById('form');
+        // let inputTitle, inputImg, submitButton; 
+
+        // async function fetchArticles() {
+        //     renderLoading();
+        //     const response = await fetch('http://localhost:3000/articles');
+        //     if (!response.ok) {
+        //         const message = `An error has occured: ${response.status}`;
+        //         throw new Error(message);
+        //     }
+        //     await response.json().then((response) => {
+        //         renderArticles(response);
+        //     });
+        // }
+
+        // function renderLoading() {
+        //     const p = document.createElement('p');
+        //     p.textContent = "loading...";
+        //     clearRoot();
+        //     root.appendChild(p);
+        // }
+
+        // function clearRoot() {
+        //     root.innerHTML = "";
+        // }
+
+        // function clearForm() {
+        //     inputTitle.setAttribute('value', "");
+        //     inputImg.setAttribute('value', "");
+        // }
+
+        // function editArticle(article) {
+        //     console.log(article);
+        //     inputTitle.setAttribute('value', article.title);
+        //     inputImg.setAttribute('value', article.imgUrl);
+        //     submitButton.addEventListener('click', () => saveArticle(article.id));
+        // }
+
+        // async function saveArticle(id) {
+        //     const body = {
+        //         title: inputTitle.value,
+        //         img: inputImg.value
+        //     }
+
+        //     const response = await fetch('http://localhost:3000/articles/' + id, {
+        //         method: 'PUT',
+        //         headers: {
+        //             "Content-Type": "application/json"
+        //         },
+        //         body: JSON.stringify(body)
+        //     });
+        //     if (!response.ok) {
+        //         const message = `An error has occured: ${response.status}`;
+        //         throw new Error(message);
+        //     }
+
+        //     await response.json().then(() => {
+        //         fetchArticles();
+        //         clearForm();
+        //     });
+        // }
+
+        // function renderArticles(articles) {
+        //     clearRoot();
+        //     const ul = document.createElement('ul');
+        //     articles.forEach((article) => {
+        //         const li = document.createElement('li');
+        //         li.textContent = article.title;
+        //         const li1 = document.createElement('li');
+        //         li1.textContent = article.tag;
+        //         const li2 = document.createElement('li');
+        //         li2.textContent = article.author;
+        //         const li3 = document.createElement('li');
+        //         li3.textContent = article.date;
+        //         const img = document.createElement('img');
+        //         img.setAttribute('src', article.imgUrl);
+        //         const li4 = document.createElement('li');
+        //         li4.textContent = article.content;
+
+        //         const button = document.createElement('button');
+        //         button.textContent = "Edit";
+        //         button.addEventListener('click', () => editArticle(article));
+
+        //         li.appendChild(img);
+        //         li.appendChild(button);
+        //         ul.appendChild(li);
+        //         ul.appendChild(li1);
+        //         ul.appendChild(li2);
+        //         ul.appendChild(li3);
+        //         ul.appendChild(li4);
+        //     });
+
+        //     root.appendChild(ul);
+
+        // }
+
+
+
+        // function renderForm() {
+        //     inputTitle = document.createElement('input');
+        //     inputImg = document.createElement('input');
+        //     inputTitle.setAttribute('type', 'text');
+        //     inputImg.setAttribute('type', 'text');
+        //     inputTitle.setAttribute('placeholder', 'type name');
+        //     inputImg.setAttribute('placeholder', 'type img URL'); 
+
+        //     const submitButton = document.createElement('button');
+        //     submitButton.textContent = "Submit";
+        //     submitButton.setAttribute('type', 'button');
+
+        //     form.appendChild(inputTitle);
+        //     form.appendChild(inputImg);
+        //     form.appendChild(submitButton);
+        // }
+
+        // renderForm();
+        // fetchArticles();
+
+        const root = document.getElementById('root');
+        const form = document.getElementById('form');
+        let inputTitle, inputImg, submitButton, inputAuthor, inputTag, inputDate, inputContent;
+        async function fetchArticles() {
+            renderLoading();
+            const response = await fetch('http://localhost:3000/articles');
+            if (!response.ok) {
+                const message = `An error has occured: ${response.status}`;
+                throw new Error(message);
+            }
+            await response.json().then((response) => {
+                renderArticles(response);
+            });
+        }
+        function renderLoading() {
+            const p = document.createElement('p');
+            p.textContent = "loading ...";
+            clearRoot();
+            root.appendChild(p);
+        }
+        function clearRoot() {
+            root.innerHTML = "";
+        }
+        function clearForm() {
+            inputTitle.value = '';
+            inputImg.value = '';
+            inputAuthor.value = '';
+            inputTag.value = '';
+            inputDate.value = '';
+            inputContent.value = '';
+            removeEventListenerSubmitButton();
+        }
+        function editArticle(article) {
+            console.log(article);
+            inputTitle.value = article.title;
+            inputImg.value = article.imgUrl;
+            inputTag.value = article.tag;
+            inputAuthor.value = article.author;
+            inputDate.value = article.date;
+            inputContent.value = article.content;
+            submitButton.addEventListener('click', function () { saveArticle(article.id) })
+        }
+        function removeEventListenerSubmitButton() {
+            submitButton.replaceWith(submitButton.cloneNode(true));
+        }
+        async function saveArticle(id) {
+            const body = {
+                title: inputTitle.value,
+                imgUrl: inputImg.value,
+                tag: inputTag.value,
+                author: inputAuthor.value,
+                date: inputDate.value,
+                content: inputContent.value
+            }
+            const response = await fetch('http://localhost:3000/articles/' + id, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            });
+            if (!response.ok) {
+                const message = `An error has occured: ${response.status}`;
+                throw new Error(message);
+            }
+            await response.json().then(() => {
+                fetchArticles();
+                clearForm();
+            });
+        }
+
+        function renderArticles(articles) {
+            clearRoot();
+            const ul = document.createElement('ul');
+            articles.forEach((article) => {
+                const li = document.createElement('li');
+                li.textContent = article.title;
+
+                const li1 = document.createElement('li');
+                li1.textContent = article.tag;
+
+                const li2 = document.createElement('li');
+                li2.textContent = article.author;
+
+                const li3 = document.createElement('li');
+                li3.textContent = article.date;
+
+                const img = document.createElement('img');
+                img.setAttribute('src', article.imgUrl);
+                const button = document.createElement('button');
+
+                const li4 = document.createElement('li');
+                li4.textContent = article.content;
+
+                button.textContent = "Edit";
+                button.addEventListener('click', () => editArticle(article));
+
+                li.appendChild(img);
+                li.appendChild(button);
+                ul.appendChild(li);
+                ul.appendChild(li1);
+                ul.appendChild(li2);
+                ul.appendChild(li3);
+                ul.appendChild(li4);
+            })
+            root.appendChild(ul);
+        }
+
+        function renderForm() {
+            inputTitle = document.createElement('input');
+            inputImg = document.createElement('input');
+            inputAuthor = document.createElement('input');
+            inputTag = document.createElement('input');
+            inputDate = document.createElement('input');
+            inputContent = document.createElement('input');
+
+            inputTitle.setAttribute('type', 'text');
+            inputImg.setAttribute('type', 'text');
+            inputAuthor.setAttribute('type', 'text');
+            inputTag.setAttribute('type', 'text');
+            inputDate.setAttribute('type', 'text');
+            inputContent.setAttribute('type', 'text');
+
+            inputTitle.setAttribute('placeholder', 'type title');
+            inputImg.setAttribute('placeholder', 'type img URL');
+            inputAuthor.setAttribute('placeholder', 'type author');
+            inputTag.setAttribute('placeholder', 'type tag');
+            inputDate.setAttribute('placeholder', 'type date');
+            inputContent.setAttribute('placeholder', 'type content');
+
+            submitButton = document.createElement('button');
+            submitButton.textContent = "Submit";
+            submitButton.setAttribute('type', 'button');
+
+            form.appendChild(inputTitle);
+            form.appendChild(inputImg);
+            form.appendChild(inputAuthor);
+            form.appendChild(inputTag);
+            form.appendChild(inputDate);
+            form.appendChild(inputContent);
+            form.appendChild(submitButton);
+        }
+        renderForm();
+        fetchArticles();
+
     </script>
+
 </body>
 
 </html>
